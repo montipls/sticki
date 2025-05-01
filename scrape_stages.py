@@ -45,7 +45,7 @@ if __name__ == "__main__":
                             print(f"{link}: {name}")
                             
                             if img["src"].startswith("data"):
-                                img["src"] = img["data-src"]
+                                img["src"] = img["data-src"] + ".png"
 
                             file.write("<li>")
                             file.write(f'<a href="..{href}.html" title="{name}">{str(img)}</a>')
