@@ -50,7 +50,7 @@ if __name__ == "__main__":
                                 links[name].append([stage["title"], link])
 
                             file.write("<li>")
-                            file.write(f'<a href="{href[6:]}.html" title="{name}">{name}</a>')
+                            file.write(f'<a href="{href[6:].replace("%", "%25")}.html" title="{name}">{name}</a>')
                             file.write("</li>")
                         next = next.find_next_sibling()
 
