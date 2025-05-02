@@ -13,9 +13,6 @@ enemies = [row.find("a") for row in rows if row.find("a")]
 links = {}
 drop_links = {}
 
-for enemy in enemies:
-    print(enemy["title"])
-
 if __name__ == "__main__":
     with open("enemies.html", "w") as file:
         file.write('<html><head><link rel="stylesheet" href="styles.css"></head><body>')
@@ -60,13 +57,13 @@ if __name__ == "__main__":
                     parent_enemies = drop_links[item["title"]]
                     f.write('<h2>Drops from:</h2><ul>')
                     for parent in parent_enemies:
-                        f.write(f'<li><a href="{parent[1][6:]}.html" title="{parent[0]}">{parent[0]}</a></li>')
+                        f.write(f'<li><a href="{parent[1][6:].replace("%", "%25")}.html" title="{parent[0]}">{parent[0]}</a></li>')
                 file.write(f'<li><a href="{item["href"][6:].replace("%", "%25")}.html" title="{item["title"]}">{item["title"]}</a><br>({rate.string})</li>')
 
             file.write("</ul><h2>Found in:</h2><ul>")
             parent_stages = links[enemy["title"]]
             for parent in parent_stages:
-                file.write(f'<li><a href="{parent[1][6:]}.html" title="{parent[0]}">{parent[0]}</a></li>')
+                file.write(f'<li><a href="{parent[1][6:].replace("%", "%25")}.html" title="{parent[0]}">{parent[0]}</a></li>')
 
             file.write("</ul>")
             file.write("</body></html>")
