@@ -61,7 +61,7 @@ if __name__ == "__main__":
                     f.write('<h2>Drops from:</h2><ul>')
                     for parent in parent_enemies:
                         f.write(f'<li><a href="{parent[1][6:]}.html" title="{parent[0]}">{parent[0]}</a></li>')
-                file.write(f'<li><a href="{item["href"][6:]}.html" title="{item["title"]}">{item["title"]}</a><br>({rate.string})</li>')
+                file.write(f'<li><a href="{item["href"][6:].replace("%", "%25")}.html" title="{item["title"]}">{item["title"]}</a><br>({rate.string})</li>')
 
             file.write("</ul><h2>Found in:</h2><ul>")
             parent_stages = links[enemy["title"]]
