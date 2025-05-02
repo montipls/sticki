@@ -1,9 +1,9 @@
 h1 {
-    color: white;
+    color: red;
 }
 
 h2 {
-    color: white;
+    color: grey;
 }
 
 ul {
@@ -12,11 +12,11 @@ ul {
 
 body {
     background-color: black;
-    color: white;
-    font-size: 20px;
+    color: lightgrey;
+    font-size: 40px;
 }
 
 a {
-    color: white;
+    color: lightblue;
     float: left;
 }
