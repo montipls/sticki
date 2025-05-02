@@ -34,10 +34,11 @@ if __name__ == "__main__":
             
             drops = soup.find(string="Drops").parent.parent.find_next_sibling()
             items = drops.find_all("a", recursive=False)
-            rates = drops.find_all("span", recursive=False)
+            rates = drops.find_all("font", recursive=False)
             zipped = list(zip(items, rates))
 
-            for item, rate in zipped:
+            for item, rate_parent in zipped:
+                rate = rate_parent.find("span")
                 file.write(f'<li><a href="{base_url}{item["href"]}" title="{item["title"]}">{item["title"]}</a><br>{rate.string}</li>')
 
 
