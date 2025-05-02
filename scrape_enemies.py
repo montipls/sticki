@@ -33,8 +33,8 @@ if __name__ == "__main__":
             file.write('<ul>')
             
             drops = soup.find(string="Drops").parent.parent.find_next_sibling()
-            items = drops.find_all("a")
-            rates = drops.find_all("span")
+            items = drops.find_all("a", recursive=False)
+            rates = drops.find_all("span", recursive=False)
             zipped = list(zip(items, rates))
 
             for item, rate in zipped:
