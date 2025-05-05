@@ -1,22 +1,51 @@
 h1 {
     color: red;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 h2 {
-    color: grey;
+    color: rgb(187, 187, 187);
+    margin: 20px;
+    margin-left: 0px;
+}
+
+h3 {
+    margin: 15px;
 }
 
 ul {
     color: white;
 }
 
+li {
+    margin: 5px;
+}
+
 body {
     background-color: black;
     color: lightgrey;
-    font-size: 40px;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 a {
     color: lightblue;
-    float: left;
+    text-decoration: none;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px;
+}
+
+p.stat {
+    font-size: 30px;
+    color: rgb(177, 177, 177);
+    margin-left: 25px;
+}
+
+ul.stat {
+    color: rgb(177, 177, 177);
+    margin-left: 25px;
 }
